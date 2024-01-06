@@ -36,7 +36,6 @@ export default function Contact() {
   const [emailSuccess, setEmailSuccess] = React.useState(false)
 
   const [formData, setFormData] = React.useState({
-    contactGroup: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -44,7 +43,6 @@ export default function Contact() {
   });
 
   const [formInputsValid, setFormInputsValid] = React.useState({
-    contactGroup: false,
     firstName: false,
     lastName: false,
     email: false,
@@ -53,7 +51,6 @@ export default function Contact() {
 
   function clearInputs() {
     setFormData({
-      contactGroup: "",
       firstName: "",
       lastName: "",
       email: "",
@@ -63,7 +60,6 @@ export default function Contact() {
 
   function resetFormInputs() {
     setFormInputsValid({
-      contactGroup: false,
       firstName: false,
       lastName: false,
       email: false,
@@ -71,14 +67,12 @@ export default function Contact() {
     });
   }
 
-  const [contactGroupField, setContactGroupField] = React.useState("");
   const [firstNameField, setFirstNameField] = React.useState("");
   const [lastNameField, setLastNameField] = React.useState("");
   const [emailField, setEmailField] = React.useState("");
   const [messageField, setMessageField] = React.useState("");
 
   React.useEffect(() => {
-    setContactGroupField(document.querySelector(".contactGroupField"));
     setFirstNameField(document.querySelector(".firstNameField"));
     setLastNameField(document.querySelector(".lastNameField"));
     setEmailField(document.querySelector(".emailField"));
@@ -99,21 +93,6 @@ export default function Contact() {
   function validateFormInputs() {
     const emailFormat = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
     const nameFormat = /^[A-Za-z]+$/;
-
-    if (
-      contactGroupField.value === "" &&
-      document.activeElement === contactGroupField
-    ) {
-      contactGroupField.classList.add("input-error");
-      setFormInputsValid((prevFormInputsValid) => {
-        return { ...prevFormInputsValid, contactGroup: false };
-      });
-    } else if (contactGroupField.value.length > 0) {
-      contactGroupField.classList.remove("input-error");
-      setFormInputsValid((prevFormInputsValid) => {
-        return { ...prevFormInputsValid, contactGroup: true };
-      });
-    }
 
     if (
       !firstNameField.value.match(nameFormat) &&
@@ -179,7 +158,6 @@ export default function Contact() {
   function sendEmail(event) {
     event.preventDefault();
     if (
-      formInputsValid.contactGroup &&
       formInputsValid.firstName &&
       formInputsValid.lastName &&
       formInputsValid.email &&
@@ -187,7 +165,7 @@ export default function Contact() {
     ) {
       emailjs.sendForm(
         "service_a1m3d8j",
-        "template_pf30muq",
+        "template_v9gl273",
         event.target,
         "OcK5Bs3T2UjqiTy-b"
       )
@@ -202,9 +180,6 @@ export default function Contact() {
         animatePopup()
       });
     } else {
-      if (contactGroupField.value.length === 0) {
-        contactGroupField.classList.add("input-error");
-      }
       if (firstNameField.value.length === 0) {
         firstNameField.classList.add("input-error");
       }
@@ -240,33 +215,30 @@ export default function Contact() {
           <h3 >Contact</h3>
           <div className="title-decoration"></div>
         </div>
-        <div className="contact-info">
+        <div className="contact-content">
+          <p className="contact-copy">If you'd like to chat about a work opportunity, debate whether or not golf is sport, or discuss how you too are not over them killing off Tasha Yar in Season 1; I'm up for all of it!</p>
           <form className="form contact-form" onSubmit={sendEmail}>
-            <div className="thank-you-popup" style={popupDisplay}>
-              <p className="thank-you-copy success">{emailSuccess ? "Success!" : "Error!"}</p>
-              <div className="checkmark-container">
-              {emailSuccess ? <IoCheckmarkCircleSharp className='thank-you-pop-checkmark'/> : <IoCloseCircleSharp className='thank-you-pop-error' />}
-              </div>
-
-            {emailSuccess ?
-              <>
-              <p className="thank-you-copy">
-              Thanks for reaching out!</p>
-              <p className="thank-you-copy">I'll be in touch soon.</p>
-              </>    
-              : 
-              <>
-                <p className='thank-you-copy'>Uh oh! It looks like something went wrong.</p>
-                <p className='thank-you-copy'>Make sure all information is entered correctly, and try again.</p>
-              </>   
-              }   
+          <div className="thank-you-popup" style={popupDisplay}>
+            <p className="thank-you-copy success">{emailSuccess ? "Success!" : "Error!"}</p>
+            <div className="checkmark-container">
+            {emailSuccess ? <IoCheckmarkCircleSharp className='thank-you-pop-checkmark'/> : <IoCloseCircleSharp className='thank-you-pop-error' />}
             </div>
-            <div className="form-row form-row-name">
-              <br />
-              <p className="select-label">
-                If you'd like to chat about a work opportunity, debate whether or not golf is sport, or discuss how you too are not over them killing off Tasha Yar in Season 1; I'm up for all of it!
-              </p> 
-              <input
+
+          {emailSuccess ?
+            <>
+            <p className="thank-you-copy">
+            Thanks for reaching out!</p>
+            <p className="thank-you-copy">I'll be in touch soon.</p>
+            </>    
+            : 
+            <>
+              <p className='thank-you-copy'>Uh oh! It looks like something went wrong.</p>
+              <p className='thank-you-copy'>Make sure all information is entered correctly, and try again.</p>
+            </>   
+            }   
+          </div>
+          <div className="form-row form-row-name">
+            <input
                 className="firstNameField"
                 type="text"
                 placeholder="First Name"
@@ -274,46 +246,43 @@ export default function Contact() {
                 name="firstName"
                 id="firstName"
                 value={formData.firstName}
-              />
-              <input
-                className="lastNameField"
-                type="text"
-                placeholder="Last Name"
-                onChange={handleChange}
-                name="lastName"
-                id="lastName"
-                value={formData.lastName}
-              />
-            </div>
-            <div className="form-row">
-              <input
-                className="emailField"
-                type="text"
-                placeholder="Email"
-                onChange={handleChange}
-                name="email"
-                value={formData.email}
-              />
-            </div>
-            <div className="form-row">
-              <textarea
-                className="messageField"
-                name="message"
-                id="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Message"
-              ></textarea>
-            </div>
+            />
+            <input
+              className="lastNameField"
+              type="text"
+              placeholder="Last Name"
+              onChange={handleChange}
+              name="lastName"
+              id="lastName"
+              value={formData.lastName}
+            />
+          </div>
+            
+          <div className="form-row">
+            <input
+              className="emailField"
+              type="text"
+              placeholder="Email"
+              onChange={handleChange}
+              name="email"
+              value={formData.email}
+            />
+          </div>
+          <div className="form-row">
+            <textarea
+              className="messageField"
+              name="message"
+              id="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Message"
+            ></textarea>
+          </div>
 
-            <p className="required-field-note">
-              <span> &mdash;</span> All fields are required
-            </p>
-
-            <button type="submit" className="btn contact-btn cta-btn btn-hover">
-              Submit
-            </button>
-          </form>
+          <button type="submit" className="btn contact-btn submit-btn btn-hover">
+            Submit
+          </button>
+        </form>
         </div>
       </Section>
     </>
