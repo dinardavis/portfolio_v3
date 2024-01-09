@@ -28,14 +28,12 @@ function App() {
           <SocialsDesktop />
           <Email />
           <div className="main-container">
-            <div className='main-content'>
-              <Intro />
-              <About />
-              <Work />
-              <Contact />
-              <Footer />
-            </div>
+            <Intro />
+            <About />
+            <Work />
+            <Contact />
           </div>
+          <Footer />
         </div>   
       </>
   

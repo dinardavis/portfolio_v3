@@ -34,10 +34,6 @@ export default function Navbar() {
   }, 10)
 
   React.useEffect(() => {
-    console.log(darkMode)
-  }, [darkMode])
-
-  React.useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [prevScroll, visible, handleScroll])

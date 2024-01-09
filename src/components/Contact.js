@@ -10,7 +10,7 @@ function Section({ children }) {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="contact section-container" id="contact">
+    <section ref={ref} className="contact-section section-container" id="contact">
       <span
         style={{
           transform: isInView ? "none" : "translateX(700px)",
@@ -164,10 +164,10 @@ export default function Contact() {
       formInputsValid.message
     ) {
       emailjs.sendForm(
-        "service_a1m3d8j",
-        "template_v9gl273",
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
         event.target,
-        "OcK5Bs3T2UjqiTy-b"
+        process.env.REACT_APP_PUBLIC_KEY
       )
       .then((response) => {
         setEmailSuccess(true)
@@ -279,9 +279,14 @@ export default function Contact() {
             ></textarea>
           </div>
 
-          <button type="submit" className="btn contact-btn submit-btn btn-hover">
-            Submit
-          </button>
+        
+            <div className="contact-btn-style">
+              <button type="submit" className="btn contact-btn btn-hover">
+               
+              </button>
+              Submit
+            </div>
+
         </form>
         </div>
       </Section>
