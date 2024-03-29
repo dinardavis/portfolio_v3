@@ -23,13 +23,21 @@ export default function Navbar() {
     setMobileNavState(prevNav => !prevNav)
   }
 
+
+
   const handleScroll = debounce(() => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    if(scrollTop > prevScroll) {
-      setVisible(false)
-    } else {
+    if(scrollTop === 0) {
       setVisible(true)
-    }
+    } else if(scrollTop > 120 && scrollTop < 700) {
+      if (scrollTop > prevScroll) {
+          setVisible(false)
+      } else {
+        setVisible(true)
+      }  
+    } else if(scrollTop > 700 ) {
+      setVisible(true)
+    } 
     setPrevScroll(scrollTop)
   }, 10)
 

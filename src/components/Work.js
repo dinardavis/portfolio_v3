@@ -12,7 +12,7 @@ function Section({ children }) {
     <section ref={ref} className="work section-container" id="work">
       <span
         style={{
-          transform: isInView ? "none" : "translateX(-700px)",
+          transform: isInView ? "none" : "translateX(700px)",
           opacity: isInView ? 1 : 0,
           transition: "all .9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
         }}

@@ -4,6 +4,7 @@ import { useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
 import { IoCloseCircleSharp } from "react-icons/io5";
+import Footer from './Footer'
 
 function Section({ children }) {
   const ref = useRef(null);
@@ -13,13 +14,14 @@ function Section({ children }) {
     <section ref={ref} className="contact-section section-container" id="contact">
       <span
         style={{
-          transform: isInView ? "none" : "translateX(700px)",
+          transform: isInView ? "none" : "translateX(-700px)",
           opacity: isInView ? 1 : 0,
           transition: "all .9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
         }}
       >
         {children}
       </span>
+      <Footer />
     </section>
   );
 }
@@ -28,9 +30,8 @@ export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-
   const [popupDisplay, setPopupDisplay] = React.useState({
-    display: "none",
+    display: "none" 
   });
 
   const [emailSuccess, setEmailSuccess] = React.useState(false)
@@ -232,8 +233,7 @@ export default function Contact() {
             </>    
             : 
             <>
-              <p className='thank-you-copy'>Uh oh! It looks like something went wrong.</p>
-              <p className='thank-you-copy'>Make sure all information is entered correctly, and try again.</p>
+              <p className='thank-you-copy'>Looks like something went wrong. Double check you info, and try again.</p>
             </>   
             }   
           </div>
@@ -287,9 +287,10 @@ export default function Contact() {
               Submit
             </div>
 
-        </form>
+          </form>
         </div>
       </Section>
+
     </>
   )
 }

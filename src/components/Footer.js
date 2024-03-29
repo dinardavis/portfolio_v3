@@ -9,7 +9,7 @@ export default function Footer() {
         <a href="https://twitter.com/dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/twitter.svg" alt="Twitter Logo"/></a>
         <a href={require("../assets/dinardavis.pdf")} download="dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/cv.svg" title="Download Resumé" alt="Resumé Logo"/></a>
       </div>
-      <div>&copy;{new Date().getFullYear()} Designed & Built by Dinar Davis</div>
+      <p className='footer-copy'>&copy;{new Date().getFullYear()} Designed & Built by Dinar Davis</p>
     </footer>
   )
 }
