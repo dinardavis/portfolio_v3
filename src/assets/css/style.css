@@ -630,7 +630,7 @@ body {
   font-weight: 200;
   line-height: 1.1;
   border-radius: .4rem;
-  z-index: 100;
+  z-index: 10;
 }
 
 .project-card {
@@ -710,7 +710,7 @@ body {
   background-color: rgb(var(--background-third), .8);
   transform: rotateY(180deg);
   border-radius: .4rem;
-  z-index: 10;
+  z-index: 11;
 }
 
 .project-desc {
