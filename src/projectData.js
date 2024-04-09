@@ -4,7 +4,7 @@ const projectData = [
     imageURL: "url(imgs/travel_thumbnail.png)",
     title: "Dashboard Travel Application",
     description: "Built with React, the Travel Dreams Dashboard concept allows users to enter the name of a city that they wish to travel to, and via multiple API requests, receive information such as travel advisory updates, current flight prices, weather info, and a populated image gallery to inspire a future getaway. Users also can create their own profile to login, connect with friends, and share social posts about their adventures!",
-    tech: ["ReactJS","MongoDB", "Atlas","Styled Components","Fetch","LocalStorage"],
+    tech: ["ReactJS","MongoDB", "Atlas","NPM","Material UI","Fetch","LocalStorage"],
     gitURL: "https://github.com/dinardavis/travel_app",
     liveDemoURL: "https://dinardavis.github.io/travel_app/",
   },
@@ -37,7 +37,7 @@ const projectData = [
   },
   {
     id: 1,
-    imageURL: "url(https://dinardavis.github.io/portfolio_v1/imgs/spacex_thumbnail.png)",
+    imageURL: "url(imgs/spacexclone_thumbnail.png)",
     title: "Landing Page Clone",
     description: "Created with HTML, CSS, and Vanilla JavaScript, the goal of this project was to create a SpaceX landing page clone as true to the actual website as possible. My clone is fully responsive, and includes links to the corporate site, offering a complete and seamless user experience.",
     tech: ["JavaScript","HTML","CSS"],

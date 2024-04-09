@@ -24,7 +24,6 @@ export default function Navbar() {
   }
 
 
-
   const handleScroll = debounce(() => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop
     if(scrollTop === 0) {

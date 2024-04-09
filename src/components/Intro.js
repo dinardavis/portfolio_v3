@@ -20,7 +20,7 @@ function Section({ children }) {
       >
         {children}
       </span>
-      <img className="intro-background" src="imgs/background.jpg" alt="Dinar Davis Main Logo" />
+      <img className="intro-background" src="imgs/background.jpg" alt="" />
     </section>
   );
 }
