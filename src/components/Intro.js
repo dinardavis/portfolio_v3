@@ -42,7 +42,7 @@ export default function Intro() {
         </div>
 
         <div className='intro-text-container-right'>
-          <p className="paragraph-text intro-text">Feel free to drop me a line, or check out more details of my mysterious and interesting past, below. ; )</p>
+          <p className="paragraph-text intro-text">Feel free to drop me a line, or check out more details of my mysterious and interesting past, below.</p>
           <div className='intro-btn-container'>
             <a href="#contact" className="intro-btn">Get in touch</a>
             <a href={require("../assets/dinardavis.pdf")} download="Dinar Davis Resume" className="intro-btn" target="_blank" rel="noopener noreferrer"><AiOutlineDownload className='btn-icon' /> Resumé</a>

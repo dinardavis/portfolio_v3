@@ -225,10 +225,6 @@ body {
   max-width: 2400px;
 }
 
-.fixed-position {
-  overflow:scroll;
-}
-
 .mobile-nav {
   display: none;
 }
@@ -1286,7 +1282,7 @@ body#dark-mode {
   background-color: rgb(var(--background-dark-third), .8);
   transform: rotateY(180deg);
   border-radius: .4rem;
-  z-index: 10;
+  z-index: 11;
 }
 
 #dark-mode .project-btn {
@@ -1462,6 +1458,7 @@ body#dark-mode {
   
   .mobile-nav {
     display: flex;
+    
   }
   
   .mobile-nav-container {
