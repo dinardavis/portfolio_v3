@@ -710,7 +710,7 @@ body {
   background-color: rgb(var(--background-third), .8);
   transform: rotateY(180deg);
   border-radius: .4rem;
-  z-index: 10;
+  z-index: 101;
 }
 
 .project-desc {
@@ -1082,7 +1082,7 @@ body#dark-mode {
 }
 
 #dark-mode .nav-container {
-  background-color: rgba(var(--background-dark), 0.35);
+  background-color: rgba(var(--background-dark), 0.7);
 }
 
 #dark-mode .nav-container.nav-shadow {
