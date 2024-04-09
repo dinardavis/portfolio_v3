@@ -18,8 +18,8 @@ export default function Project(props) {
         <div className="project-card">
           <div className="project-card-inner">
             <div className="project-card-front">
-              <div className="project-image" style={{backgroundImage: props.image}}>
               <h4 className="project-title">{props.title}</h4>
+              <div className="project-image" style={{backgroundImage: props.image}}>
               </div>  
             </div>
             <div className="project-card-back">
