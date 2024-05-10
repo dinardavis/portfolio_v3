@@ -19,9 +19,11 @@ img {
 :root {
   font-size: 17px;
   --background-primary: 217, 221, 230;
+  --background-primary-dark: 168, 170, 175;
   --background-secondary: 10, 115, 137;
   --background-third: 124, 114, 135;
   --background-accent:225, 175, 72;
+  --background-project-card: 212, 217, 226;
   --background-dark: 105, 107, 111;
   --background-dark-secondary: 6, 61, 72;
   --background-dark-third: 93, 85, 101;
@@ -647,7 +649,7 @@ body {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgb(var(--background-secondary), .8);
+  background: rgb(var(--background-project-card), .75);
   z-index: 10;
 }
 
