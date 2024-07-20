@@ -24,11 +24,11 @@ img {
   --background-third: 124, 114, 135;
   --background-accent:225, 175, 72;
   --background-project-card: 212, 217, 226;
-  --background-dark: 105, 107, 111;
+  --background-dark: 93, 85, 101;
   --background-dark-secondary: 6, 61, 72;
   --background-dark-third: 93, 85, 101;
   --background-dark-accent: 243, 182, 31;
-  --background-dark-project-card: 27,27,30;
+  --background-dark-project-card: 76, 68, 83;
 
   --fontcolor-main: #0a7389;
   --fontcolor-secondary: #d9dde6;
@@ -531,17 +531,10 @@ body {
   height: 77px;
   padding: .7rem 1.5rem;
   margin: 1rem 1rem 1rem 0;
-  background-color: rgb(var(--background-accent));
+  background-color: var(--fontcolor-accent);
   border-radius: .4rem;
   transition-property: transform;
 }
-
-/* .stack-logo-container:hover {
-  animation-name: logo-rotate; 
-  animation-duration: 1s; 
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-} */
 
 @keyframes logo-rotate {
   from {transform: rotateY(0deg);}
@@ -798,7 +791,8 @@ body {
 
 .contact-section {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 70px);
+  min-height: 730px;
   padding-bottom: .2rem;
   background-image: linear-gradient(to right bottom, rgb(var(--background-secondary), .7) 10%, rgb(var(--background-secondary)) 45%, rgb(var(--background-secondary)) 45%);
   color: var(--fontcolor-secondary);
@@ -1074,7 +1068,7 @@ body#dark-mode {
   left: 30px;
   height: 350px;
   width: 62px;
-  background-color: rgb(var(--background-dark), .25);
+  background-color: rgb(var(--background-dark), .65);
   box-shadow: 2px 2px 12px #0000002b;
   z-index: 10;
 }
@@ -1197,7 +1191,7 @@ body#dark-mode {
   padding: 1rem;
   margin: 0 2rem;
   background-color: var(--fontcolor-accent);
-  color: rgb(var(--background-dark-third), .9);
+  color: rgb(var(--fontcolor-dark-main), .9);
   text-align: center;
   font-size: 2rem;
   font-weight: 200;
@@ -1224,7 +1218,7 @@ body#dark-mode {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgb(var(--background-dark-secondary), .8);
+  background-color: rgb(var(--background-dark-project-card), .8);
   z-index: 10;
 }
 
@@ -1260,6 +1254,7 @@ body#dark-mode {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(var(--background-dark-project-card), .8);
 }
 
 #dark-mode .project-image {
@@ -1281,7 +1276,7 @@ body#dark-mode {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-color: rgb(var(--background-dark-third), .8);
+  background-color: rgb(var(--background-dark-secondary), .8);
   transform: rotateY(180deg);
   border-radius: .4rem;
   z-index: 11;
@@ -1533,6 +1528,11 @@ body#dark-mode {
 
   .intro-btn {
     margin: .5rem 0
+  }
+
+  .contact-section {
+    min-height: 100%;
+    height: 100%;
   }
 }
 

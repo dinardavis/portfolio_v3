@@ -2,7 +2,7 @@ const projectData = [
   {
     id: 5,
     imageURL: "url(imgs/travel_thumbnail.png)",
-    title: "Dashboard Travel Application",
+    title: "Travel Dashboard Application",
     description: "Built with React, the Travel Dreams Dashboard concept allows users to enter the name of a city that they wish to travel to, and via multiple API requests, receive information such as travel advisory updates, current flight prices, weather info, and a populated image gallery to inspire a future getaway. Users also can create their own profile to login, connect with friends, and share social posts about their adventures!",
     tech: ["ReactJS","MongoDB", "Atlas","NPM","Material UI","Fetch","LocalStorage"],
     gitURL: "https://github.com/dinardavis/travel_app",
