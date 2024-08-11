@@ -62,8 +62,8 @@ export default function Project(props) {
                 : ""}
               </div>
               <div className={`btn-container ${props.guestUsername ? "btn-container-special" : ""}`}>
-                <a href={props.git} className="project-btn btn-1" target="_blank" rel="noopener noreferrer">Github</a>
-                <a href={props.demo} className="project-btn btn-2" target="_blank" rel="noopener noreferrer">Demo</a>
+                <a href={props.demo} className="project-btn btn-1" target="_blank" rel="noopener noreferrer">Demo</a>
+                <a href={props.git} className="project-btn btn-2" target="_blank" rel="noopener noreferrer">Github</a>
               </div>         
             </div>     
           </div>
