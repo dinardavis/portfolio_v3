@@ -20,15 +20,23 @@ export default function Project(props) {
             <div className="project-card-front">
               <h4 className="project-title">{props.title}</h4>
               <div className="project-image" style={{backgroundImage: props.image}}>
+            
               </div>  
             </div>
             <div className="project-card-back">
               <div className="project-desc">
                 <p>{props.desc}</p>
+                {props.guestUsername ? 
+                <div className="project-login-container">
+                  <p className='project-login-header'>Guest Login Credentials</p>
+                  <p className='project-login-text'>{props.guestUsername}<br></br>
+                  {props.guestPassword}</p>
+                </div>
+                : ""}
               </div>
-              <div className='btn-container'>
-                <a href={props.git} className="project-btn btn-1" target="_blank" rel="noopener noreferrer">Github</a>
-                <a href={props.demo} className="project-btn btn-2" target="_blank" rel="noopener noreferrer">Demo</a>
+              <div className={`btn-container ${props.guestUsername ? "btn-container-special" : ""}`}>
+                <a href={props.demo} className="project-btn btn-1" target="_blank" rel="noopener noreferrer">Demo</a>
+                <a href={props.git} className="project-btn btn-2" target="_blank" rel="noopener noreferrer">Github</a>
               </div>         
             </div>     
           </div>
