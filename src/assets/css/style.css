@@ -18,7 +18,7 @@ img {
 
 :root {
   font-size: 17px;
-  --background-primary: 216, 221, 230;
+  --background-primary: 217, 221, 230;
   --background-primary-dark: 168, 170, 175;
   --background-secondary: 10, 115, 137;
   --background-third: 124, 114, 135;
@@ -340,9 +340,6 @@ body {
 }
 
 .intro-logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 1rem;
   margin: 1rem;
 }
@@ -350,7 +347,6 @@ body {
 .intro-logo {
   align-self: center;
   width: 100%;
-  max-width: 275px;
   padding: 1.5rem;
   animation: logo-rotate 6s both infinite;
 }
@@ -715,22 +711,6 @@ body {
   margin-bottom: 15px;
 }
 
-.project-login-container {
-  padding-top: .5rem;
-}
-
-.project-login-header {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  color: rgb(var(--background-dark-accent));
-  font-weight: 200;
-}
-
-.project-login-text {
-  font-size: .95rem;
-}
-
 .project-info {
   display: flex;
   justify-content: center;
@@ -771,10 +751,6 @@ body {
  width: 80%;
  margin-top: 2rem;
 }
-
-.btn-container.btn-container-special {
-  margin-top: 0rem;
- }
 
 .project-btn {
   display: flex;

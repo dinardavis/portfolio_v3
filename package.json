@@ -1,7 +1,8 @@
 {
   "name": "portfolio_v2",
-  "homepage": "/",
+  "homepage": "https://dinardavis.github.io/portfolio_v2/",
   "version": "0.1.0",
+
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

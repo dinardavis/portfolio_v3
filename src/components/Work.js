@@ -34,8 +34,6 @@ export default function Work() {
         tech={project.tech}
         git={project.gitURL}
         demo={project.liveDemoURL}
-        guestUsername={project.guestUsername}
-        guestPassword={project.guestPassword}
       />
     )
   })
