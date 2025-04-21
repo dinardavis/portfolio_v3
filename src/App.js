@@ -1,7 +1,7 @@
 import React from "react"
+import { ThemeProvider } from "./ThemeContext";
 import './assets/css/style.css';
 import Navbar from './components/Navbar'
-import SocialsDesktop from './components/SocialsDesktop'
 import Intro from './components/Intro'
 import Technologies from "./components/Technologies"
 import About from './components/About'
@@ -11,20 +11,22 @@ import Contact from './components/Contact'
 
 
 
+
 function App() {
   
   return (
+    <ThemeProvider>
     <div className="master-container">
       <Navbar />
-      <SocialsDesktop />
       <div className="main-container">
         <Intro />
-        <Technologies />
         <About />
+        <Technologies />
         <Work />
         <Contact />
       </div>
-    </div>   
+    </div>  
+    </ThemeProvider> 
   );
 }
 

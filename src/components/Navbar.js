@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useTheme } from "../ThemeContext";
 import MobileNav from './MobileNav';
 import { debounce } from './utilities/helpers';
 
@@ -8,21 +9,7 @@ export default function Navbar() {
   const [visible, setVisible] = React.useState(true)
   const [mobileNavState, setMobileNavState] = React.useState(false)
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
-  const [darkMode, setDarkMode] = React.useState(false)
-
-  function toggleDarkMode() {
-    setDarkMode(prevMode => !prevMode)
-    if(!darkMode) {
-      document.body.id = "dark-mode"
-    } else {
-      document.body.id = ""
-    }
-  }
-
-  function handleToggle() {
-    setMobileNavState(prevNav => !prevNav)
-  }
-
+  const { isDarkMode, toggleTheme } = useTheme();
 
   const handleScroll = debounce(() => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop
@@ -39,6 +26,11 @@ export default function Navbar() {
     } 
     setPrevScroll(scrollTop)
   }, 10)
+
+  function handleToggle() {
+    setMobileNavState(prevNav => !prevNav)
+  }
+
 
   React.useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -75,18 +67,24 @@ export default function Navbar() {
 
       <div className="main-nav">
         <a href="#about" className="nav-link">about</a>
-        <a href="#work" className="nav-link">projects</a>
+        <a href="#technologies" className="nav-link">technologies</a>
+        <a href="#work" className="nav-link">work</a>
         <a href="#contact" className="nav-link">contact</a>
-        <div className="dark-mode-toggle" onClick={toggleDarkMode}><i className="fa-solid fa-lightbulb"></i></div>
+      </div>
+
+      <div className="main-nav-right">
+        <a href="https://github.com/dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/github.svg" alt="Github Logo"/></a>
+        <a href="https://www.linkedin.com/in/dinardavis/" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/linkedin.svg" alt="LinkedIn Logo"/></a>
+        <a href="https://x.com/dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/twitter.svg" alt="X Logo"/></a>
+        <div onClick={toggleTheme} className=" dark-mode-toggle theme-toggle">
+          <i className="fa-solid fa-lightbulb"></i>
+        </div>
       </div>
 
       <MobileNav 
         mobileNavState={mobileNavState}
         handleToggle={handleToggle} 
-        toggleDarkMode={toggleDarkMode}
-        darkMode={darkMode}
       />
-      
     </header>
       
   )

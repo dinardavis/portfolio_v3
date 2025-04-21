@@ -4,13 +4,16 @@ import { useInView } from "framer-motion";
 
 function Section({ children }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.25
+  });
 
   return (
     <section ref={ref} className="about about-section section-container" id="about">
       <span
         style={{
-          transform: isInView ? "none" : "translateX(-700px)",
+          transform: isInView ? "none" : "translateX(700px)",
           opacity: isInView ? 1 : 0,
           transition: "all .9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
         }}
@@ -27,7 +30,7 @@ export default function About() {
     <>
       <Section>
         <div className="section-title about-title">
-          <h3 >About</h3>
+          <h3 >About Me</h3>
           <div className="title-decoration"></div>
         </div>
         <div className="about-content">      

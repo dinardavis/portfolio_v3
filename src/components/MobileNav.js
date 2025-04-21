@@ -1,6 +1,8 @@
 import React from "react";
+import { useTheme } from "../ThemeContext";
 
 export default function MobileNav(props) {
+  const { isDarkMode, toggleTheme } = useTheme();
 
   if(props.mobileNavState) {
     document.body.classList.add('fixed-position')
@@ -18,16 +20,25 @@ export default function MobileNav(props) {
       
 
       <div className={`mobile-nav-container ${props.mobileNavState ? "show-mobile-nav" : ""}`} onClick={props.handleToggle}>
-        <a href="#about" className="mobile-nav-link">about</a>
-        <a href="#work" className="mobile-nav-link">projects</a>
-        <a href="#contact" className="mobile-nav-link">contact</a>
+
+        <a href="#about" className="nav-link">about</a>
+        <a href="#technologies" className="nav-link">technologies</a>
+        <a href="#work" className="nav-link">work</a>
+        <a href="#contact" className="nav-link">contact</a>
+
+
+
         <div className="socials-mobile-nav">
-          <a href="https://github.com/dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/github.svg" alt=""/></a>
-          <a href="https://www.linkedin.com/in/dinardavis/" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/linkedin.svg" alt=""/></a>
-          <a href="https://twitter.com/dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/twitter.svg" alt=""/></a>
-          <a href={require("../assets/dinardavis.pdf")} download="dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/cv.svg" title="Download Resumé" alt="Resumé Logo"/></a>
+          <a href="https://github.com/dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/github.svg" alt="Github Logo"/></a>
+          <a href="https://www.linkedin.com/in/dinardavis/" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/linkedin.svg" alt="LinkedIn Logo"/></a>
+          <a href="https://x.com/dinardavis" className="social-link" target="_blank" rel="noopener noreferrer"><img src="imgs/social/twitter.svg" alt="X Logo"/></a>
+     
         </div>
-        <div className="mobile-nav-link dark-mode-toggle" onClick={props.toggleDarkMode}>{props.darkMode ? <i className="fa-regular fa-lightbulb"></i> : <i className="fa-solid fa-lightbulb"></i>}</div>
+
+        <div onClick={toggleTheme} className=" dark-mode-toggle theme-toggle">
+          <i className="fa-solid fa-lightbulb"></i>
+        </div>
+       
       </div>
     </div>
   )

@@ -282,7 +282,6 @@ export default function Contact() {
         
             <div className="contact-btn-style">
               <button type="submit" className="btn contact-btn btn-hover">
-               
               </button>
               Submit
             </div>
@@ -290,7 +289,6 @@ export default function Contact() {
           </form>
         </div>
       </Section>
-
     </>
   )
 }
