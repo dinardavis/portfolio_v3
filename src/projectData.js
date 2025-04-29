@@ -3,7 +3,7 @@ const projectData = [
     id: 6,
     imageURL: "imgs/golbi_thumbnail.png",
     title: "React Subscription Saas + Stripe",
-    description: "Built with React, the Travel Dreams Dashboard concept allows users to enter the name of a city that they wish to travel to, and via multiple API requests, receive information such as travel advisory updates, current flight prices, weather info, and a populated image gallery to inspire a future getaway. Users also can create their own profile to login, connect with friends, and share social posts about their adventures!",
+    description: "Golbi.co is a subscription-based web development agency platform built with React. Designed for ongoing client collaboration, it features service browsing, project management tools, and integrated payment processing via the Stripe API. The single-page interface offers a smooth, modern user experience tailored for scalable digital services.",
     tech: [
       {
         icon_file: "react.svg",
@@ -30,8 +30,8 @@ const projectData = [
         icon_tooltip: "Stripe"
       },
     ],
-    gitURL: "https://github.com/dinardavis/travel_app",
-    liveDemoURL: "https://dinardavis.github.io/travel_app/",
+    gitURL: "https://github.com/dinardavis/golbi",
+    liveDemoURL: "https://golbi.co/",
   },
   {
     id: 5,
